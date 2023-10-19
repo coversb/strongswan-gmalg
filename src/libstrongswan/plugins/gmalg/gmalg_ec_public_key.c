@@ -96,7 +96,9 @@ static bool verify_curve_signature(private_gmalg_ec_public_key_t *this,
 	{
 		valid = verify_signature(this, hash, signature);
 		chunk_free(&hash);
-		valid = TRUE;
+		/*Fix pass through bug begin*/
+		//valid = TRUE;
+		/*Fix pass through bug end*/
 	}
 err:
 	return valid;
